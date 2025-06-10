@@ -102,11 +102,11 @@ There’s no system to track uptime, performance, or logs, so failures or perfor
 
 ### <u>Question</u>
 What the issues are with this infrastructure?
-<u>Why terminating SSL at the load balancer level is an issue?</u>
-Because SSL is decrypted on the load balancer, traffic between the load balancer and server is unencrypted and exposing data on internal network.
-<u>Why having only one MySQL server capable of accepting writes is an issue?</u>
-The MySQL master is the only writable database; if it's fails, all writes , that created a SPOF.
-<u>Why having servers with all the same components (database, web server and application server) might be a problem</u>
+<u>Why terminating SSL at the load balancer level is an issue?</u>\
+Because SSL is decrypted on the load balancer, traffic between the load balancer and server is unencrypted and exposing data on internal network.\
+<u>Why having only one MySQL server capable of accepting writes is an issue?</u>\
+The MySQL master is the only writable database; if it's fails, all writes , that created a SPOF.\
+<u>Why having servers with all the same components (database, web server and application server) might be a problem</u>\
 
 
 ## <u>**3-scale_up**</u>
