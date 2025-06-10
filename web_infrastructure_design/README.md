@@ -22,13 +22,14 @@
 * The IP is stored in the local cache for subsequent requests until its TTL expires.
 
 ### <u>Question</u>
- What the issues are with this infrastructure?
-<u>Single Point Of Failure(SPOF)</u>
-There is only one server; if it fails, the website goes down.
-<u>Downtime for maintenance</u>
-When restarting services or deploying code updates, the website becomes unavailable.
-<u>Scalability limits</u>
+ What the issues are with this infrastructure?\
+<u>Single Point Of Failure(SPOF)</u>\
+There is only one server; if it fails, the website goes down.\
+<u>Downtime for maintenance</u>\
+When restarting services or deploying code updates, the website becomes unavailable.\
+<u>Scalability limits</u>\
 A single server cannot handle high traffic.
+
 
 ## <u>**1-distributed_web_infrastructure**</u>
 ### <u>Diagram</u>
@@ -57,13 +58,14 @@ A single server cannot handle high traffic.
 * The IP is stored in the local cache for subsequent requests until its TTL expires.
 
 ### <u>Question</u>
-What the issues are with this infrastructure?
-<u>Single Point Of Failure(SPOF)</u>
-If the load balancer goes down, no server can be reached. The MySQL master is the only writable database; if it's fails, all writes stop.
-<u>Security issues</u>
-No firewall, leaving servers exposed to unauthorized traffic, and without an SSL certificate, all data is sent in plaintext.
-<u>No monitoring</u>
-There’s no system to track uptime, performance, or logs, so failures or performance degradation go undetected.
+What the issues are with this infrastructure?\
+<u>Single Point Of Failure(SPOF)</u>\
+If the load balancer goes down, no server can be reached. The MySQL master is the only writable database; if it's fails, all writes stop.\
+<u>Security issues</u>\
+No firewall, leaving servers exposed to unauthorized traffic, and without an SSL certificate, all data is sent in plaintext.\
+<u>No monitoring</u>\
+There’s no system to track uptime, performance, or logs, so failures or performance degradation go undetected.\
+
 
 ## <u>**2-secured_and_monitored_web_infrastructure**</u>
 ### <u>Diagram</u>
@@ -101,12 +103,12 @@ There’s no system to track uptime, performance, or logs, so failures or perfor
 * The IP is stored in the local cache for subsequent requests until its TTL expires.
 
 ### <u>Question</u>
-What the issues are with this infrastructure?
+What the issues are with this infrastructure?\
 <u>Why terminating SSL at the load balancer level is an issue?</u>\
 Because SSL is decrypted on the load balancer, traffic between the load balancer and server is unencrypted and exposing data on internal network.\
 <u>Why having only one MySQL server capable of accepting writes is an issue?</u>\
 The MySQL master is the only writable database; if it's fails, all writes , that created a SPOF.\
-<u>Why having servers with all the same components (database, web server and application server) might be a problem</u>\
+<u>Why having servers with all the same components (database, web server and application server) might be a problem</u>
 
 
 ## <u>**3-scale_up**</u>
